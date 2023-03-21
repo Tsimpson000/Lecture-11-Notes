@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lecture_11_Notes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="1187">
+    <Canvas Background="#FF1F1F1F">
+        <RichTextBox x:Name="rtbDisplay" Height="314" Width="317" Canvas.Left="425" Canvas.Top="60" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF6F6F6F">
 
-    </Grid>
+        </RichTextBox>
+        <Canvas Height="314" Width="306" Canvas.Left="53" Canvas.Top="60" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF6F6F6F">
+            <Label Content="Subject Line" Canvas.Left="14" Canvas.Top="4" HorizontalAlignment="Left" VerticalAlignment="Center" Width="153" FontSize="20"/>
+            <TextBox x:Name="txtSubjectLine" Canvas.Left="14" TextWrapping="Wrap" Canvas.Top="41" Width="282" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25"/>
+            <Label Content="Body" Canvas.Left="14" Canvas.Top="81" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Height="36" FontSize="20"/>
+            <RichTextBox Height="143" Width="282" Canvas.Left="14" Canvas.Top="117" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run x:Name="runBody" Text="RichTextBox"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Button x:Name="btnDisplayInfo" Content="Submit Post" Canvas.Left="89" Canvas.Top="284" HorizontalAlignment="Left" VerticalAlignment="Center" Width="128" Click="btnDisplayInfo_Click" RenderTransformOrigin="0.805,0.692"/>
+        </Canvas>
+        <ListBox x:Name="lbBlogPosts" Height="314" Width="309" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="814" Canvas.Top="60" SelectionChanged="lbBlogPosts_SelectionChanged"/>
+        <TextBox x:Name="txtR" Canvas.Left="53" TextWrapping="Wrap" Canvas.Top="405" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtG" Canvas.Left="176" TextWrapping="Wrap" Canvas.Top="405" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtB" Canvas.Left="299" TextWrapping="Wrap" Canvas.Top="405" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="R" Canvas.Left="73" Canvas.Top="374" Foreground="Red" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="G" Canvas.Left="196" Canvas.Top="374" Foreground="Lime" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+        <Label Content="B" Canvas.Left="319" Canvas.Top="374" Foreground="Blue" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+    </Canvas>
 </Window>
